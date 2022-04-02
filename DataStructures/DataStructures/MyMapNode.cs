@@ -38,12 +38,35 @@ namespace DataStructures
             return default(V);
         }
 
+        //adding
         public void Add(K key, V value)
         {
             int position = GetArrayPosition((K)key);
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
             KeyValue<K, V> item = new KeyValue<K, V> { Key = key, Value = value };
             linkedList.AddLast(item);
+        }
+
+        // removing
+        public void Remove(K key)
+        {
+            int position = GetArrayPosition((K)key);
+            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+            bool itemfound = false;
+            KeyValue<K, V> foundItem = default(KeyValue<K, V>);
+            foreach (KeyValue<K, V> item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemfound = true;
+                    foundItem = item;
+                }
+            }
+
+            if (itemfound)
+            {
+                linkedList.Remove(foundItem);
+            }
         }
 
 

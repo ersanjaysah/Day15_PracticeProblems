@@ -29,8 +29,13 @@ namespace DataStructures
             hash.Add("17", "avoidable");
             hash.Add("18", "situations");
 
-            string hashget = hash.Get("18");
-            Console.WriteLine("18th index value is: " + hashget);
+            string hash1 = hash.Get("17");
+            Console.WriteLine("17th index value is: " + hash1);
+
+            Console.WriteLine("\nRemoving the word \"avoidable\" ");
+            string hash2 = hash.Get("17");
+            Console.WriteLine("you have successfully Removed "+ hash2 +" word from Paragraph");
+            hash.Remove("17");
         }   
     }
 }
