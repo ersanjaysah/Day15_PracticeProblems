@@ -11,6 +11,7 @@ namespace DataStructures
         private readonly int size;
         private readonly LinkedList<KeyValue<K, V>>[] items;
 
+        // constructor
         public MyMapNode(int size)
         {
             this.size = size;
